@@ -110,7 +110,7 @@ class CrispChatSdkPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
             Crisp.setSessionSegment(call.arguments.toString())
             result.success("Android Crisp sdk setSessionSegment successful");
         } else if (call.method == "openCrisp") {
-            activity.startActivity(Intent(context, ChatActivity::class.java), 1234);
+            activity.startActivityForResult(Intent(context, ChatActivity::class.java), 1234)
             result.success("Android Crisp sdk loaded successful")
         } else if (call.method == "closeCrisp") {
             activity.finishActivity(1234)
