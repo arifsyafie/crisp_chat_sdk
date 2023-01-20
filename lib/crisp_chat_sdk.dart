@@ -98,4 +98,12 @@ class CrispChatSdk {
     );
     return status;
   }
+
+  /// Close chat view (this method close chat page) for android only
+  Future<String?> closeCrisp() async {
+    final String? status = await _channel.invokeMethod(
+      'closeCrisp',
+    );
+    return status;
+  }
 }
